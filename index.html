@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping cart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="product-list">
+        <table style="width: 100%" id="productListTable">
+          <h1 class="product-list-header">My Product List</h1>
+          <tr>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th></th>
+          </tr>
+        </table>
+      </div>
+      <!-- cart section start here -->
+      <div class="product-cart">
+        <table style="width: 100%" id="cartTableHeading">
+          <h1 class="product-list-header">My Cart</h1>
+          <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>QTY</th>
+            <th>Total Price</th>
+            <th></th>
+            <th>+/- QTY</th>
+          </tr>
+        </table>
+        <table style="width: 100%" id="cartTable"></table>
+        <div class="total-div">
+          <h3 class="total">Total QTY =<span id="total-qty"> 0 pcs</span></h3>
+          <h3 class="total">
+            Total amaunt =<span id="total-amaunt"> 0 TK</span>
+          </h3>
+        </div>
+        <div class="btn-div">
+          <button id="c-btn" class="btn">Clear Cart</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

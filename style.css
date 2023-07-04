@@ -56,7 +56,7 @@ tr {
   font-size: large;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1128px) {
   .container {
     display: block;
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */

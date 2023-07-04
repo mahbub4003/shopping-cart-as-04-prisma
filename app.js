@@ -8,4 +8,5 @@ function app() {
   }
   document.getElementById("c-btn").addEventListener("click", clear);
 }
+
 app();

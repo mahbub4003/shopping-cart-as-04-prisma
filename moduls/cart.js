@@ -1,7 +1,12 @@
 import { totalAmaunt, totalQty } from "./total.js";
 
 let cartItems = [];
+
+const input = document.getElementById("input");
+input.addEventListener("focusout", () => totalAmaunt(input));
+
 const cartTable = document.getElementById("cartTable");
+
 const addToCart = (item) => {
   const foundObject = cartItems?.find((obj) => obj.ProductId === item.id);
 
@@ -16,7 +21,7 @@ const addToCart = (item) => {
     });
   }
   newCartItem();
-  totalAmaunt();
+  totalAmaunt(input);
   totalQty();
 };
 
@@ -49,7 +54,7 @@ function newCartItem() {
       item.qty += 1;
       qty.textContent = `${item.qty}pcs`;
       totalPriceCell.textContent = `${item.Price * item.qty} TK`;
-      totalAmaunt();
+      totalAmaunt(input);
       totalQty();
     });
     minusButton.addEventListener("click", () => {
@@ -60,7 +65,7 @@ function newCartItem() {
       } else {
         alert("Must have a minimum of 1 item");
       }
-      totalAmaunt();
+      totalAmaunt(input);
       totalQty();
     });
     buttonCell.appendChild(plusButton);
@@ -74,7 +79,7 @@ function newCartItem() {
       const removeItm = () => {
         cartItems = cartItems.filter((obj) => obj.ProductId !== item.ProductId);
         newCartItem();
-        totalAmaunt();
+        totalAmaunt(input);
         totalQty();
       };
       removeItm();
@@ -88,8 +93,9 @@ function newCartItem() {
 const clearCart = () => {
   cartTable.innerHTML = "";
   cartItems = [];
-  totalAmaunt();
+  totalAmaunt(input);
   totalQty();
+  input.value = "";
 };
 
 export { addToCart, cartItems, clearCart };

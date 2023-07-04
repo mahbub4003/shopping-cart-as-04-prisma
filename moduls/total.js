@@ -1,12 +1,13 @@
 import { cartItems } from "./cart.js";
 
-const totalAmaunt = () => {
+const totalAmaunt = (input) => {
   const totalAmauntElement = document.getElementById("total-amaunt");
-  const totalQty = cartItems.reduce(
+  const totalAmaunt = cartItems.reduce(
     (prev, pres) => prev + pres.Price * pres.qty,
     0
   );
-  totalAmauntElement.innerHTML = `${totalQty} TK`;
+  let value = cartItems.length > 0 ? input.value : 0;
+  totalAmauntElement.innerHTML = `${totalAmaunt - value} TK`;
 };
 
 const totalQty = () => {
@@ -15,10 +16,4 @@ const totalQty = () => {
   totalQtyElement.innerHTML = `${total} pcs`;
 };
 
-const clearCart = () => {
-  cartTable.innerHTML = "";
-  cartItems;
-  totalAmaunt();
-  totalQty();
-};
-export { totalAmaunt, totalQty, clearCart };
+export { totalAmaunt, totalQty };

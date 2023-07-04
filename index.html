@@ -41,6 +41,9 @@
           <h3 class="total">
             Total amaunt =<span id="total-amaunt"> 0 TK</span>
           </h3>
+
+          <label for="input">Discaunt</label>
+          <input id="input" type="number" />
         </div>
         <div class="btn-div">
           <button id="c-btn" class="btn">Clear Cart</button>
@@ -48,5 +51,10 @@
       </div>
     </div>
     <script type="module" src="app.js"></script>
+    <script>
+      function submit(e) {
+        e.preventDefault();
+      }
+    </script>
   </body>
 </html>
